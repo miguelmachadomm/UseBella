@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UseBella - Catálogo de Roupas</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #db1d5c;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+        .catalogo {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px;
+        }
+        .item {
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin: 15px;
+            padding: 10px;
+            width: 250px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .item h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+        .item p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #555;
+        }
+        .item .preco {
+            font-weight: bold;
+            color: #ff6347;
+            font-size: 16px;
+        }
+        #cart {
+            display: none; /* Oculta o carrinho por padrão */
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 250px;
+        }
+        #cart h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        #cart ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0 0;
+        }
+        #cart ul li {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 5px;
+        }
+        #cart ul li span {
+            float: right;
+        }
+        #checkout {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        #checkout:hover {
+            background-color: #0056b3;
+        }
+        .container {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    
+    <header>
+        <h1>UseBella - Catálogo de Roupas</h1>
+        <button id="view-cart">Ver Carrinho</button>
+    </header>
+
+    <div class="catalogo">
+
+        <div class="item">
+            <img src="roupas.img/1.jpeg" alt="Saia Metalica Prata">
+            <h3>Saia Metalica Prata & Body Cavado</h3>
+            <p>Tamanho: M</p>
+            <p class="preco">R$ 49,99</p>
+            <button onclick="addToCart('Saia Metalica Prata & Body Cavado', 49.99)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="item">
+            <img src="roupas.img/2.jpeg" alt="Saia Metalica Prata">
+            <h3>Saia Metalica Prata & Body Cavado</h3>
+            <p>Tamanho: M</p>
+            <p class="preco">R$ 49,99</p>
+            <button onclick="addToCart('Saia Metalica Prata & Body Cavado', 49.99)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="item">
+            <img src="roupas.img/3.jpeg" alt="Saia Metalica Prata">
+            <h3>Saia Metalica Prata & Body Cavado</h3>
+            <p>Tamanho: M</p>
+            <p class="preco">R$ 49,99</p>
+            <button onclick="addToCart('Saia Metalica Prata & Body Cavado', 49.99)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="item">
+            <img src="roupas.img/WhatsApp Image 2024-08-17 at 13.04.27 (1).jpeg" alt="Saia Metalica Prata">
+            <h3>Saia Metalica Prata & Body Cavado</h3>
+            <p>Tamanho: M</p>
+            <p class="preco">R$ 49,99</p>
+            <button onclick="addToCart('Saia Metalica Prata & Body Cavado', 49.99)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="item">
+            <img src="roupas.img/WhatsApp Image 2024-08-17 at 13.04.27.jpeg" alt="Saia Metalica Prata">
+            <h3>Saia Metalica Prata & Body Cavado</h3>
+            <p>Tamanho: M</p>
+            <p class="preco">R$ 49,99</p>
+            <button onclick="addToCart('Saia Metalica Prata & Body Cavado', 49.99)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="item">
+            <img src="roupas.img/WhatsApp Image 2024-08-17 at 13.04.28.jpeg" alt="Saia Metalica Prata">
+            <h3>Saia Metalica Prata & Body Cavado</h3>
+            <p>Tamanho: M</p>
+            <p class="preco">R$ 49,99</p>
+            <button onclick="addToCart('Saia Metalica Prata & Body Cavado', 49.99)">Adicionar ao Carrinho</button>
+        </div>
+
+        <div class="item">
+            <img src="roupas.img/WhatsApp Image 2024-08-17 at 13.04.29.jpeg" alt="Saia Metalica Prata">
+            <h3>Saia Metalica Prata & Body Cavado</h3>
+            <p>Tamanho: M</p>
+            <p class="preco">R$ 49,99</p>
+            <button onclick="addToCart('Saia Metalica Prata & Body Cavado', 49.99)">Adicionar ao Carrinho</button>
+        </div>
+
+        <!-- Adicione mais itens aqui -->
+
+    </div>
+
+    <div id="cart">
+        <h3>Carrinho de Compras</h3>
+        <ul id="cart-items"></ul>
+        <button id="checkout">Finalizar Compra</button>
+    </div>
+
+    <div class="container">
+        <h1>Entre em Contato pelo WhatsApp</h1>
+        <p>Clique no botão abaixo para iniciar uma conversa conosco via WhatsApp.</p>
+        <a href="https://wa.me/554396820793?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20os%20produtos%20da%20UseBella" target="_blank">Conversar no WhatsApp</a>
+    </div>
+
+    <script>
+        let cartItems = [];
+
+        function addToCart(itemName, itemPrice) {
+            cartItems.push({ name: itemName, price: itemPrice });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartList = document.getElementById('cart-items');
+            cartList.innerHTML = '';
+            let total = 0;
+
+            cartItems.forEach(item => {
+                const li = document.createElement('li');
+                li.innerText = item.name + ' - R$' + item.price.toFixed(2);
+                cartList.appendChild(li);
+                total += item.price;
+            });
+
+            const liTotal = document.createElement('li');
+            liTotal.innerHTML = '<strong>Total: R$<span>' + total.toFixed(2) + '</span></strong>';
+            cartList.appendChild(liTotal);
+        }
+
+        document.getElementById('checkout').addEventListener('click', function() {
+            alert('Compra finalizada com sucesso!');
+            cartItems = [];
+            updateCart();
+        });
+
+        document.getElementById('view-cart').addEventListener('click', function() {
+            const cart = document.getElementById('cart');
+            if (cart.style.display === 'none' || cart.style.display === '') {
+                cart.style.display = 'block';
+            } else {
+                cart.style.display = 'none';
+            }
+        });
+    </script>
+
+</body>
+</html>
